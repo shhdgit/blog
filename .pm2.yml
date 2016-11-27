@@ -1,5 +1,5 @@
 apps:
   - name: 'blog-server'
-    script: 'node --harmony server.js'
-    cwd: './server/'
+    script: './server/server.js'
+    node_args: '--harmony'
     watch: true
