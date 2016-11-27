@@ -4,7 +4,7 @@ const router = new Router()
 
 // index
 router.get('/', (ctx, next) => {
-  ctx.body = '123'
+  ctx.body = '456'
 })
 
 module.exports = router
