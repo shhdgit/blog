@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - 'node'
 
-script: echo $FTP_USER
+script: echo $DEPLOY_URL
+after_success: curl $DEPLOY_URL
