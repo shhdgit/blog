@@ -1,0 +1,6 @@
+[
+  {
+    "name": "blog-server",
+    "script": "node --harmony server.js"
+  }
+]
