@@ -2,5 +2,5 @@ language: node_js
 node_js:
   - 'node'
 
-script: echo $DEPLOY_URL
+script: echo success
 after_success: curl $DEPLOY_URL
