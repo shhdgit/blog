@@ -1,0 +1,4 @@
+apps:
+  - name: 'blog-server',
+    script: 'node --harmony server.js'
+    cwd: './server/'
