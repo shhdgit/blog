@@ -4,4 +4,4 @@ node_js:
 
 script: echo $FTP_USER
 after_success:
-  'curl --ftp-create-dirs -T ./test.js -u $FTP_USER:$FTP_PASSWORD ftp://rollaround.cn/blog/'
+  'curl --ftp-create-dirs -T ./test -u $FTP_USER:$FTP_PASSWORD ftp://rollaround.cn/blog/'
