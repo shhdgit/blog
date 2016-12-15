@@ -8,7 +8,7 @@ const path = require('path')
 const port = process.env.PORT || 3000
 const app = new Koa()
 
-app.use(serve(path.resolve(process.cwd(), '../client/front')))
+app.use(serve(path.resolve(__dirname, '../client/front')))
 app.use(router.routes())
 
 app.listen(port)
