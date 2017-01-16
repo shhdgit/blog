@@ -1,0 +1,17 @@
+{
+  "name": "vendor1_c398f641",
+  "content": {
+    "../node_modules/process/browser.js": {
+      "id": 1,
+      "meta": {}
+    },
+    "../node_modules/vue/dist/vue.runtime.common.js": {
+      "id": 10,
+      "meta": {}
+    },
+    "../node_modules/webpack/buildin/global.js": {
+      "id": 29,
+      "meta": {}
+    }
+  }
+}

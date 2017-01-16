@@ -1,7 +1,6 @@
 const path = require('path')
 const ROOT = path.resolve(__dirname, '../')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -15,23 +14,46 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.vue'],
     alias: {
       'public': `${ROOT}/public`,
       'src': `${ROOT}/src`,
       'components': `${ROOT}/src/components`,
       'views': `${ROOT}/src/components/views`,
+      'store': `${ROOT}/src/store`,
+      'mixins': `${ROOT}/src/mixins`,
       'api': `${ROOT}/src/api`,
-      'routes': `${ROOT}/src/routes`
+      'assets': `${ROOT}/src/assets`,
+      'config': `${ROOT}/src/config`,
+      'service': `${ROOT}/src/service`
     }
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.vue$/,
+        use: 'vue-loader?sourceMap',
+        include: `${ROOT}/src/`
+      },
+      {
+        test: /\.js$/,
         use: 'babel-loader',
         include: `${ROOT}/src/`,
         exclude: /node_modules/
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'url-loader',
+        query: {
+          name: 'dist/fonts/[name].[hash:8].[ext]'
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
+        loader: 'file-loader',
+        query: {
+          name: 'dist/assets/[name].[hash:8].[ext]'
+        }
       }
     ]
   },
@@ -48,6 +70,11 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: `${ROOT}/config`,
       manifest: require('../config/vendor2.manifest.json')
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
     })
   ]
 }

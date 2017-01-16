@@ -1,0 +1,7 @@
+{
+  "presets": [
+    ["es2015", {"modules": false}],
+    "stage-2"
+  ],
+  "plugins": ["babel-plugin-syntax-jsx", "babel-plugin-inferno", "transform-decorators-legacy"]
+}

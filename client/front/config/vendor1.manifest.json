@@ -1,0 +1,41 @@
+{
+  "name": "vendor1_b048da8a",
+  "content": {
+    "../node_modules/inferno/inferno.js": {
+      "id": 2,
+      "meta": {}
+    },
+    "../node_modules/process/browser.js": {
+      "id": 7,
+      "meta": {}
+    },
+    "../node_modules/inferno-component/inferno-component.js": {
+      "id": 8,
+      "meta": {}
+    },
+    "../node_modules/inferno-router/inferno-router.js": {
+      "id": 19,
+      "meta": {}
+    },
+    "../node_modules/inferno-create-element/inferno-create-element.js": {
+      "id": 40,
+      "meta": {}
+    },
+    "../node_modules/inferno/dist/inferno-component.node.js": {
+      "id": 41,
+      "meta": {}
+    },
+    "../node_modules/inferno/dist/inferno-create-element.node.js": {
+      "id": 42,
+      "meta": {}
+    },
+    "../node_modules/inferno/dist/inferno-router.node.js": {
+      "id": 43,
+      "meta": {}
+    },
+    "../node_modules/inferno/dist/inferno.node.js": {
+      "id": 44,
+      "meta": {}
+    }
+  }
+}
