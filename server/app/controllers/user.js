@@ -29,11 +29,5 @@ exports.login = async function (ctx, next) {
 }
 
 exports.test = function (ctx, next) {
-  const user = new User({
-    name: 'jklopsdfw',
-    pwd: '159357'
-  })
-
-  user.save(function (err) {ctx.body='ok'})
 }
 
