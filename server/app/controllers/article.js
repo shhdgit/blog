@@ -23,7 +23,7 @@ exports.get_list = async function (ctx, next) {
       }
     })
   } else {
-    ctx.status = 400
+    ctx.body = []
   }
 
   next()

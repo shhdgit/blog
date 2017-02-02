@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predev": "npm run dll",
     "dev": "webpack-dev-server --config ./build/webpack.config.dev.js",
-    "prebuild": "rm -rf ./public/dist",
+    "prebuild": "rm -rf ./public/dist && npm run dll",
     "build": "webpack --config ./build/webpack.config.prod.js --hide-modules --display-error-details",
     "predll": "rm -rf ./public/vendors",
-    "dll": "webpack --config ./build/dll.webpack.config.js"
+    "dll": "set NODE_ENV=production && webpack --config ./build/dll.webpack.config.js"
   },
   "keywords": [],
   "author": "",

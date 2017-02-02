@@ -74,11 +74,6 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: `${ROOT}/config`,
       manifest: require('../config/vendor2.manifest.json')
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': '"production"'
-      }
     })
   ]
 }
