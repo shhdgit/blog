@@ -29,6 +29,11 @@ exports.login = async function (ctx, next) {
 }
 
 exports.test = function (ctx, next) {
-  console.log(ctx.cookies.get('session_id'))
+  const user = new User({
+    name: 'jklopsdfw',
+    pwd: '159357'
+  })
+
+  user.save(function (err) {ctx.body='ok'})
 }
 
