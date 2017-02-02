@@ -8,7 +8,7 @@ const AuthMiddleware = require('../middleware/authorize')
 
 // login
 router
-  .get('/', User.test)
+  .get('/login', User.login)
   .post('/login', User.login)
   .get('/test', AuthMiddleware.auth, User.test)
 

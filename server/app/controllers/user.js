@@ -30,7 +30,7 @@ exports.login = async function (ctx, next) {
 }
 
 exports.test = function (ctx, next) {
-  ctx.body = ctx.request
+  // ctx.body = ctx.request
   console.log(ctx.cookies.get('session_id'))
 }
 
