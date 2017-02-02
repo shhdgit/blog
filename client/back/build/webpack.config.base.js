@@ -64,7 +64,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: `${ROOT}/src/index.html`,
+      template: `${ROOT}/src/index.dll.html`,
       inject: true
     }),
     new webpack.DllReferencePlugin({
@@ -74,6 +74,11 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: `${ROOT}/config`,
       manifest: require('../config/vendor2.manifest.json')
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
     })
   ]
 }

@@ -1,12 +1,8 @@
 {
-  "name": "vendor1_0a59ea9c",
+  "name": "vendor1_c0b81ed9",
   "content": {
-    "../node_modules/process/browser.js": {
-      "id": 1,
-      "meta": {}
-    },
     "../node_modules/vue/dist/vue.runtime.common.js": {
-      "id": 10,
+      "id": 9,
       "meta": {}
     },
     "../node_modules/webpack/buildin/global.js": {
