@@ -1,16 +1,24 @@
 {
-  "name": "vendor1_0a59ea9c",
+  "name": "editor_679bb13e",
   "content": {
     "../node_modules/process/browser.js": {
       "id": 1,
       "meta": {}
     },
     "../node_modules/vue/dist/vue.runtime.common.js": {
-      "id": 10,
+      "id": 2,
+      "meta": {}
+    },
+    "../node_modules/vuex/dist/vuex.js": {
+      "id": 3,
       "meta": {}
     },
     "../node_modules/webpack/buildin/global.js": {
-      "id": 29,
+      "id": 5,
+      "meta": {}
+    },
+    "../node_modules/vueditor/dist/js/vueditor.min.js": {
+      "id": 13,
       "meta": {}
     }
   }

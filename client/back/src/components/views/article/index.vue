@@ -2,7 +2,7 @@
   <div class="article">
     <my-title level="2">文章列表</my-title>
     <router-link
-      :to="{name: 'post_article'}">
+      :to="{ name: 'post_article' }">
       <el-button
         class="btn"
         type="primary"
@@ -10,19 +10,25 @@
     </router-link>
     <router-link
       class="article-item"
-      v-for="i in [1,2]"
+      v-for="article in articles"
       tag="a"
-      :to="{ name: 'view_article' }">
+      :to="{ name: 'view_article', params: { id: article.id } }">
       <div class="article-item-top">
-        <h3 class="article-item-title">源码解析系列：测试长度</h3>
+        <h3 class="article-item-title">{{ article.article.title }}</h3>
         <span class="article-item-time">2017.01.13 18:42</span>
       </div>
-      <p class="article-item-brief">这个系列会做一些优秀开源项目的源码解析,这个系列会做一些优秀开源项目的源码解析这个系列会做一些优秀开源项目的源码解析这个系列会做一些优秀开源项目的源码解析，一是为了沉淀和整理自己一年多来所学，二也是希望自己能坚持多做分享，多做开源。文章由初级工程师面向初级工程师，也请大神们多多指点</p>
+      <p class="article-item-brief">{{ article.article.content }}</p>
       <div class="article-item-icon">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-kanguos"></use>
         </svg>
         <span>&nbsp;17</span>
+        <svg
+          class="icon icon-shanchu"
+          aria-hidden="true"
+          @click.prevent="del(article.id)">
+          <use xlink:href="#icon-shanchu"></use>
+        </svg>
       </div>
     </router-link>
   </div>
@@ -31,12 +37,29 @@
 <script>
   import MyTitle from 'components/UI/title'
   import { Button } from 'element-ui'
+  import { articleApi } from 'api'
 
   export default {
     data () {
       return {
-
+        articles: [],
       }
+    },
+
+    methods: {
+      del (id) {
+        if (confirm('确认删除吗')) {
+          articleApi.del(id).then(res => {
+            this.articles = res.data
+          })
+        }
+      }
+    },
+
+    created () {
+      articleApi.get_list().then(res => {
+        this.articles = res.data
+      })
     },
 
     components: {
@@ -60,6 +83,8 @@
   }
 
   .article-item {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -118,5 +143,13 @@
     span {
       font-size: .65rem;
     }
+  }
+
+  .icon-shanchu {
+    position: absolute;
+    right: .6rem;
+    bottom: .4rem;
+
+    padding: 5px;
   }
 </style>

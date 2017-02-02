@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     vendor1: ['vue'],
-    vendor2: ['vue-router', 'axios', 'vuex']
+    vendor2: ['vue-router', 'axios', 'vuex'],
   },
   output: {
     path: `${ROOT}/public`,
@@ -21,7 +21,7 @@ module.exports = {
       name: '[name]_[chunkhash:8]'                    // 必填项，manifest的name
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.origin.html',
+      filename: `${ROOT}/src/index.html`,
       template: `${ROOT}/src/index.html`,
       inject: true,
       chunksSortMode: function(entry1, entry2) {

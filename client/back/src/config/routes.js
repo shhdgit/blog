@@ -47,8 +47,13 @@ const router = new VueRouter({
         },
         {
           name: 'view_article',
-          path: 'view',
+          path: 'view/:id',
           component: require('components/views/article/view'),
+        },
+        {
+          name: 'view_update',
+          path: 'post/:id',
+          component: require('components/views/article/update'),
         },
       ]
     },

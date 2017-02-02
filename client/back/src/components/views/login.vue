@@ -1,5 +1,7 @@
 <template>
-  <div class="abs-center login">
+  <div
+    class="abs-center login"
+    @keyup.enter="submit">
     <div class="login-wrap">
       <h1>Blog</h1>
       <el-form
@@ -39,6 +41,7 @@
     Input,
     Button,
   } from 'element-ui'
+  import { userApi } from 'api'
 
   export default {
     data () {
@@ -72,7 +75,14 @@
     },
 
     methods: {
-      submit () {},
+      submit () {
+        userApi.login({ name: this.form.username, pwd: this.form.password })
+          .then(res => {
+            if (res.data.success) {
+              this.$router.push('/dashboard')
+            }
+          })
+      },
       reset () {
         this.$refs.form.resetFields()
       },

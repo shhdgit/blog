@@ -25,8 +25,12 @@ module.exports = {
       'api': `${ROOT}/src/api`,
       'assets': `${ROOT}/src/assets`,
       'config': `${ROOT}/src/config`,
-      'service': `${ROOT}/src/service`
+      'service': `${ROOT}/src/service`,
+      'plugins': `${ROOT}/src/plugins`
     }
+  },
+  externals: {
+    SimpleMDE: 'SimpleMDE'
   },
   module: {
     rules: [
@@ -60,7 +64,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: `${ROOT}/public/index.origin.html`,
+      template: `${ROOT}/src/index.html`,
       inject: true
     }),
     new webpack.DllReferencePlugin({

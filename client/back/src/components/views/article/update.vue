@@ -10,26 +10,38 @@
   import { articleApi } from 'api'
 
   export default {
-    components: {
-      EditLayout
-    },
-
     methods: {
       post () {
         const edit = this.$refs.edit
+        const id = this.$route.params.id
         const title = edit.getTitle()
         const content = edit.getPreview()
         const editContent = edit.getContent()
 
-        articleApi.save({ title, content, editContent })
+        articleApi.update({ id, title, content, editContent })
           .then(res => {
             console.log('ok')
-            this.$router.replace('/article')
+            this.$router.replace(`/article/view/${ id }`)
           })
       },
       cancel () {
         this.$router.back()
       },
+    },
+
+    mounted () {
+      const edit = this.$refs.edit
+
+      articleApi.get(this.$route.params.id).then(res => {
+        const data = res.data
+
+        edit.setTitle(data.article.title)
+        edit.setContent(data.edit.content)
+      })
+    },
+
+    components: {
+      EditLayout
     },
   }
 </script>

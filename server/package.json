@@ -4,16 +4,22 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon ./server.js"
   },
   "keywords": [],
   "author": "Suhaha",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.0",
     "dotenv": "^2.0.0",
+    "html-to-text": "^3.0.0",
     "koa": "^2.0.0",
+    "koa-body": "^2.0.0",
     "koa-router": "^7.0.1",
-    "koa-static": "^3.0.0",
-    "mongoose": "^4.6.8"
+    "koa-session2": "^2.1.0",
+    "mongoose": "^4.7.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
