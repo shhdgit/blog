@@ -5,8 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    vendor1: ['inferno', 'inferno-component', 'inferno-router'],
-    vendor2: ['history', 'axios']
+    vendor1: ['vue'],
+    vendor2: ['vue-router', 'axios', 'vuex']
   },
   output: {
     path: `${ROOT}/public`,
@@ -21,7 +21,7 @@ module.exports = {
       name: '[name]_[chunkhash:8]'                    // 必填项，manifest的name
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.origin.html',
+      filename: `${ROOT}/src/index.dll.html`,
       template: `${ROOT}/src/index.html`,
       inject: true,
       chunksSortMode: function(entry1, entry2) {
@@ -40,7 +40,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"production"'
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     })
   ]

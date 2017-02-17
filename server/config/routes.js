@@ -3,6 +3,7 @@ const Router = require('koa-router')
 const router = new Router()
 const User = require('../app/controllers/user')
 const Article = require('../app/controllers/article')
+const Pv = require('../app/controllers/pv')
 
 const AuthMiddleware = require('../middleware/authorize')
 
@@ -17,5 +18,11 @@ router
   .get('/article/:id', AuthMiddleware.auth, Article.get)
   .post('/article/:id', AuthMiddleware.auth, Article.update)
   .del('/article', AuthMiddleware.auth, Article.del, Article.get_list)
+
+// api
+// article
+  .get('/api/article', Article.get_list)
+  .get('/api/article/:id', Article.get)
+  .get('/api/pv', Pv.get_total)
 
 module.exports = router

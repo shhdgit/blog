@@ -16,7 +16,7 @@ module.exports = merge(BASE_CONFIG, {
     rules: [
       {
         test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader?sourceMap&modules&localIdentName=[local]--[hash:base64:8]', 'less-loader']
+        use: ['style-loader', 'css-loader?sourceMap', 'less-loader']
       }
     ]
   },

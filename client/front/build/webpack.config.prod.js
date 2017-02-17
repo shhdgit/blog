@@ -15,7 +15,7 @@ module.exports = merge(BASE_CONFIG, {
       {
         test: /\.(css|less)$/,
         loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?modules&localIdentName=[local]-[hash:base64:8]!less-loader',
+          loader: 'css-loader!less-loader',
           fallbackLoader: 'style-loader'
         })
       }
@@ -23,7 +23,21 @@ module.exports = merge(BASE_CONFIG, {
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      minimize: true
+      minimize: true,
+      options: {
+        vue: {
+          loaders: {
+            css: ExtractTextPlugin.extract({
+              loader: 'css-loader',
+              fallbackLoader: 'vue-style-loader'
+            }),
+            less: ExtractTextPlugin.extract({
+              loader: 'css-loader!less-loader',
+              fallbackLoader: 'vue-style-loader'
+            })
+          }
+        }
+      }
     }),
     new ExtractTextPlugin({
       filename: 'dist/styles/[name].[contenthash:8].css',
@@ -38,11 +52,6 @@ module.exports = merge(BASE_CONFIG, {
         comments: false
       },
       sourceMap: false
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': '"production"'
-      }
     })
   ]
 })

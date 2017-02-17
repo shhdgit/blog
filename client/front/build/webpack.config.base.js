@@ -1,7 +1,6 @@
 const path = require('path')
 const ROOT = path.resolve(__dirname, '../')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -15,20 +14,29 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.vue'],
     alias: {
       'public': `${ROOT}/public`,
       'src': `${ROOT}/src`,
       'components': `${ROOT}/src/components`,
       'views': `${ROOT}/src/components/views`,
+      'store': `${ROOT}/src/store`,
+      'mixins': `${ROOT}/src/mixins`,
       'api': `${ROOT}/src/api`,
-      'routes': `${ROOT}/src/routes`
+      'assets': `${ROOT}/src/assets`,
+      'config': `${ROOT}/src/config`,
+      'service': `${ROOT}/src/service`
     }
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.vue$/,
+        use: 'vue-loader',
+        include: `${ROOT}/src/`
+      },
+      {
+        test: /\.js$/,
         use: 'babel-loader',
         include: `${ROOT}/src/`,
         exclude: /node_modules/
@@ -38,7 +46,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: `${ROOT}/public/index.origin.html`,
+      template: `${ROOT}/src/index.dll.html`,
       inject: true
     }),
     new webpack.DllReferencePlugin({
@@ -48,6 +56,11 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: `${ROOT}/config`,
       manifest: require('../config/vendor2.manifest.json')
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
     })
   ]
 }

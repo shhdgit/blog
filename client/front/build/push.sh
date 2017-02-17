@@ -1,4 +1,6 @@
-npm run build && \
-git add . && \
-git commit -m "$@" && \
-git push origin master
+#!/bin/bash
+
+webpack --config ./build/webpack.config.prod.js && \
+gaa && \
+gcam $@ && \
+ggpush

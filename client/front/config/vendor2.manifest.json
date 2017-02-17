@@ -1,160 +1,116 @@
 {
-  "name": "vendor2_213d43d6",
+  "name": "vendor2_d74da673",
   "content": {
     "../node_modules/axios/lib/utils.js": {
       "id": 0,
       "meta": {}
     },
-    "../node_modules/history/PathUtils.js": {
+    "../node_modules/axios/lib/defaults.js": {
       "id": 1,
       "meta": {}
     },
-    "../node_modules/history/LocationUtils.js": {
-      "id": 3,
-      "meta": {}
-    },
-    "../node_modules/warning/browser.js": {
-      "id": 4,
-      "meta": {}
-    },
-    "../node_modules/axios/lib/defaults.js": {
-      "id": 5,
-      "meta": {}
-    },
-    "../node_modules/history/createTransitionManager.js": {
-      "id": 6,
-      "meta": {}
-    },
-    "../node_modules/process/browser.js": {
-      "id": 7,
-      "meta": {}
-    },
     "../node_modules/axios/lib/adapters/xhr.js": {
-      "id": 9,
+      "id": 2,
       "meta": {}
     },
     "../node_modules/axios/lib/cancel/Cancel.js": {
-      "id": 10,
+      "id": 3,
       "meta": {}
     },
     "../node_modules/axios/lib/cancel/isCancel.js": {
-      "id": 11,
+      "id": 4,
       "meta": {}
     },
     "../node_modules/axios/lib/core/createError.js": {
-      "id": 12,
+      "id": 5,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/bind.js": {
-      "id": 13,
-      "meta": {}
-    },
-    "../node_modules/history/DOMUtils.js": {
-      "id": 14,
-      "meta": {}
-    },
-    "../node_modules/history/ExecutionEnvironment.js": {
-      "id": 15,
-      "meta": {}
-    },
-    "../node_modules/invariant/browser.js": {
-      "id": 16,
+      "id": 6,
       "meta": {}
     },
     "../node_modules/axios/index.js": {
-      "id": 17,
+      "id": 7,
       "meta": {}
     },
-    "../node_modules/history/index.js": {
-      "id": 18,
+    "../node_modules/vue-router/dist/vue-router.common.js": {
+      "id": 8,
+      "meta": {}
+    },
+    "../node_modules/vuex/dist/vuex.js": {
+      "id": 10,
       "meta": {}
     },
     "../node_modules/axios/lib/axios.js": {
-      "id": 20,
+      "id": 11,
       "meta": {}
     },
     "../node_modules/axios/lib/cancel/CancelToken.js": {
-      "id": 21,
+      "id": 12,
       "meta": {}
     },
     "../node_modules/axios/lib/core/Axios.js": {
-      "id": 22,
+      "id": 13,
       "meta": {}
     },
     "../node_modules/axios/lib/core/InterceptorManager.js": {
-      "id": 23,
+      "id": 14,
       "meta": {}
     },
     "../node_modules/axios/lib/core/dispatchRequest.js": {
-      "id": 24,
+      "id": 15,
       "meta": {}
     },
     "../node_modules/axios/lib/core/enhanceError.js": {
-      "id": 25,
+      "id": 16,
       "meta": {}
     },
     "../node_modules/axios/lib/core/settle.js": {
-      "id": 26,
+      "id": 17,
       "meta": {}
     },
     "../node_modules/axios/lib/core/transformData.js": {
-      "id": 27,
+      "id": 18,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/btoa.js": {
-      "id": 28,
+      "id": 19,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/buildURL.js": {
-      "id": 29,
+      "id": 20,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/combineURLs.js": {
-      "id": 30,
+      "id": 21,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/cookies.js": {
-      "id": 31,
+      "id": 22,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/isAbsoluteURL.js": {
-      "id": 32,
+      "id": 23,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/isURLSameOrigin.js": {
-      "id": 33,
+      "id": 24,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/normalizeHeaderName.js": {
-      "id": 34,
+      "id": 25,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/parseHeaders.js": {
-      "id": 35,
+      "id": 26,
       "meta": {}
     },
     "../node_modules/axios/lib/helpers/spread.js": {
-      "id": 36,
+      "id": 27,
       "meta": {}
     },
-    "../node_modules/history/createBrowserHistory.js": {
-      "id": 37,
-      "meta": {}
-    },
-    "../node_modules/history/createHashHistory.js": {
-      "id": 38,
-      "meta": {}
-    },
-    "../node_modules/history/createMemoryHistory.js": {
-      "id": 39,
-      "meta": {}
-    },
-    "../node_modules/resolve-pathname/index.js": {
-      "id": 45,
-      "meta": {}
-    },
-    "../node_modules/value-equal/index.js": {
-      "id": 46,
+    "../node_modules/process/browser.js": {
+      "id": 28,
       "meta": {}
     }
   }

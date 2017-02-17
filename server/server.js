@@ -2,11 +2,11 @@ require('dotenv').config()
 
 const Koa = require('koa')
 const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 const koaBody = require('koa-body')
 const session = require('koa-session2')
 const router = require('./config/routes')
 const MongooseStore = require('./libs/mongoose-session')
-mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/blog')
 
 const port = process.env.PORT || 3000
