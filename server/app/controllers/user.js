@@ -29,15 +29,15 @@ exports.login = async function (ctx, next) {
 }
 
 exports.signup = async function (ctx, next) {
-  const _user = ctx.request.body
-  const name = _user.name
-  const pwd = _user.pwd
-  const user = new User({
-    name, pwd
-  })
+  // const _user = ctx.request.body
+  // const name = _user.name
+  // const pwd = _user.pwd
+  // const user = new User({
+  //   name, pwd
+  // })
 
-  await user.save()
-  ctx.status = 200
+  // await user.save()
+  // ctx.status = 200
 }
 
 exports.test = function (ctx, next) {
