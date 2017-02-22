@@ -38,6 +38,7 @@ exports.signup = async function (ctx, next) {
 
   // await user.save()
   // ctx.status = 200
+  next()
 }
 
 exports.test = function (ctx, next) {
